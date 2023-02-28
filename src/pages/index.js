@@ -17,7 +17,7 @@ export default function Home({ results }) {
           className="movie"
           key={movie.id}
         >
-          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+          {/* <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /> */}
 
           <h4>
             <Link
@@ -58,15 +58,15 @@ export default function Home({ results }) {
   );
 }
 
-export async function getServerSideProps() {
-  //이름은 getServerSideProps로 고정
-  //서버에서 돌아가는 곳 -> 무엇을 return하던지 props에서 가져올 수 있다.
-  const { results } = await (
-    await fetch(`http://localhost:3000/api/movies`)
-  ).json();
-  return {
-    props: {
-      results,
-    },
-  };
-}
+// export async function getServerSideProps() {
+//   //이름은 getServerSideProps로 고정
+//   //서버에서 돌아가는 곳 -> 무엇을 return하던지 props에서 가져올 수 있다.
+//   const { results } = await (
+//     await fetch(`http://localhost:3000/api/movies`)
+//   ).json();
+//   return {
+//     props: {
+//       results,
+//     },
+//   };
+// }
